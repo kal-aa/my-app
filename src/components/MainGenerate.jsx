@@ -38,10 +38,10 @@ const MainGenerate = ({
               className="grid grid-cols-2 border-2 rounded-3xl relative"
             >
               <a
-                href={`./assets/images/${product.for}/${product.type}/${product.selectedColor}-${product.type}.jpeg`}
+                href={`/assets/images/${product.for}/${product.type}/${product.selectedColor}-${product.type}.jpeg`}
               >
                 <img
-                  src={`./assets/images/${product.for}/${product.type}/${product.selectedColor}-${product.type}.jpeg`}
+                  src={`/assets/images/${product.for}/${product.type}/${product.selectedColor}-${product.type}.jpeg`}
                   alt={`${product.for}-${product.selectedColor}-${product.type}.jpeg`}
                   className="w-full h-full max-h-52 brightness-95"
                 />

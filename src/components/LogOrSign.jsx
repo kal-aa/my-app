@@ -5,7 +5,7 @@ const LogOrSign = () => {
   return (
     <div className="relative h-screen w-screen flex items-center justify-center">
       <div
-        style={{ backgroundImage: "url('./assets/images/images.jpeg')" }}
+        style={{ backgroundImage: "url('/assets/images/images.jpeg')" }}
         className="absolute inset-0 bg-cover bg-center filter blur-sm brightness-75"
       ></div>
       <div className="relative text-center bg-stone-200 px-3 py-5 md:px-5 md:py-8 rounded-2xl">

@@ -4,7 +4,7 @@ const Testimonial = () => {
   const [testimonies, setTestimonies] = useState([]);
 
   useEffect(() => {
-    fetch("./assets/testimonials.json")
+    fetch("/assets/testimonials.json")
       .then((res) => res.json())
       .then((json) => setTestimonies(json.testimonials))
       .catch((error) => {
@@ -30,7 +30,7 @@ const Testimonial = () => {
             className="bg-black text-white p-5 rounded-2xl relative shadow-lg shadow-red-900 text-center"
           >
             <img
-              src={`./assets/images/${testimony.name}.jpeg`}
+              src={`/assets/images/${testimony.name}.jpeg`}
               alt={`${testimony.name}`}
               className="w-14 h-14 rounded-full absolute -left-3 -top-3 text-blue-500"
             />
