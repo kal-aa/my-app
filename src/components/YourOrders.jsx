@@ -53,7 +53,7 @@ const YourOrders = ({ handleDelete, orders }) => {
                 </button>
               </div>
               <img
-                src={`/assets/images/${order.who}/${order.type}/${order.color}-${order.type}.jpeg`}
+                src={`./assets/images/${order.who}/${order.type}/${order.color}-${order.type}.jpeg`}
                 alt=""
                 className="w-1/2 max-w-[250px] -ml-1"
               />
