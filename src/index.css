@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: playafair;
+  background-color: rgb(225, 243, 252);
+}
+
+@layer base {
+  button, a, input {
+    @apply transition-all duration-300 ease-in-out;
+  }
+}
+
+
+.signup-form div {
+  @apply mt-2;
+}
+
+
+.signup-input{
+  @apply text-stone-400 border-y py-1 px-2  md:border-l-2 rounded-lg md:inline-block block focus:bg-stone-100 focus:text-black focus:outline-none
+}
+
+.show-password{
+  @apply absolute bottom-2 right-4 md:right-1
+}
+
+.show-confirm-password {
+  @apply absolute bottom-2 right-4 md:right-1
+}
+
+.header-hover {
+@apply hover:bg-blue-300 rounded-lg leading-4
+}
+
+input {
+  @apply cursor-pointer focus:cursor-text
+}
