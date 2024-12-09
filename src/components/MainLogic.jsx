@@ -75,7 +75,7 @@ const MainLogic = ({ isHome = true, isSearch, searchValue }) => {
 
   useEffect(() => {
     setIsPending(true);
-    fetch("/assets/products.json")
+    fetch("./assets/products.json")
       .then((res) => res.json())
       .then((json) => {
         setIsPending(false);
