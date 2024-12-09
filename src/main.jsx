@@ -5,7 +5,7 @@ import "./index.css";
 import App from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(
-  <BrowserRouter><StrictMode>
+  <BrowserRouter basename={import.meta.env.VITE_PUBLIC_URL}><StrictMode>
       <App />
     </StrictMode>
   </BrowserRouter>
