@@ -30,7 +30,7 @@ const Header = ({ setElipsis = true, showMiddleSection = false, search }) => {
         {/* Lef section of the header */}
         <div className="flex items-center ml-1">
           <img
-            src="/assets/images/cart.jpeg"
+            src={import.meta.env.VITE_PUBLIC_URL + "assets/images/cart.jpeg"}
             alt="cart.jpeg"
             className="sm:w-20 w-16  h-10 rounded-full"
           />

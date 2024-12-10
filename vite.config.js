@@ -1,11 +1,13 @@
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [react()],
-  base: "/front_back/",
-  server: {
-    port: 3000,
-  },
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd());
+
+  return {
+    plugins: [react()],
+    base: env.VITE_PUBLIC_URL || "/",
+    publicDir: "public",
+    server: { port: 3000 },
+  };
 });

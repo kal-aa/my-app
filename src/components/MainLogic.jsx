@@ -75,7 +75,7 @@ const MainLogic = ({ isHome = true, isSearch, searchValue }) => {
 
   useEffect(() => {
     setIsPending(true);
-    fetch("/assets/products.json")
+    fetch(import.meta.env.VITE_PUBLIC_URL + "assets/products.json")
       .then((res) => res.json())
       .then((json) => {
         setIsPending(false);
@@ -107,6 +107,7 @@ const MainLogic = ({ isHome = true, isSearch, searchValue }) => {
           : setProducts(productsWithDefaults);
       })
       .catch((error) => {
+        setIsPending(false);
         console.error("Error fetching the JSON", error);
       });
   }, [isHome, isSearch, searchValue]);
