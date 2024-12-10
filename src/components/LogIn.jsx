@@ -1,6 +1,7 @@
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import PropTypes from "prop-types";
 import { useRef, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const LogIn = ({
   isSending,
@@ -52,9 +53,11 @@ const LogIn = ({
 
   return (
     <>
-      <h1 className="text-center text-4xl font-bold mt-5 text-pink-600">
-        Log In
-      </h1>
+      <NavLink to='/home/10'>
+        <h1 className="text-center text-4xl font-bold mt-5 text-pink-600">
+          Log In
+        </h1>
+      </NavLink>
       <div className="flex items-center justify-center">
         <form
           onSubmit={submit}

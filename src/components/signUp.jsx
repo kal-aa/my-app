@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { FaEyeSlash, FaEye } from "react-icons/fa";
 import PropTypes from "prop-types";
+import { NavLink } from "react-router-dom";
 
 const SignUp = ({ toSignup }) => {
   const [formData, setFormData] = useState({
@@ -66,12 +67,14 @@ const SignUp = ({ toSignup }) => {
     setIsSending(true);
     toSignup(formData, setIsSending, setBadRequestText);
   };
-  
+
   return (
     <>
-      <h1 className="text-center text-blue-500 text-4xl font-bold mt-5">
-        Sign up
-      </h1>
+      <NavLink to="/home/10">
+        <h1 className="text-center text-blue-500 text-4xl font-bold mt-5">
+          Sign up
+        </h1>
+      </NavLink>
       <div className="flex items-center justify-center">
         <form
           onSubmit={submit}
@@ -196,7 +199,7 @@ const SignUp = ({ toSignup }) => {
             />
           </div>
           <p className="md:max-w-80 md:px-2 md:pl-5 text-red-600 max-w-60 px-4 break-words text-center leading-4 mt-2 -mb-2">
-            {badRequestText || '\u00A0'}
+            {badRequestText || "\u00A0"}
           </p>
           <div className="justify-self-center">
             <button
