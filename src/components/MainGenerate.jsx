@@ -35,7 +35,7 @@ const MainGenerate = ({
           products.map((product) => (
             <div
               key={product.id}
-              className="grid grid-cols-2 border-2 rounded-3xl relative"
+              className="grid grid-cols-2 border-2 rounded-3xl relative -mx-5"
             >
               <a
                 href={
