@@ -10,7 +10,7 @@ const LogOrSign = () => {
             import.meta.env.VITE_PUBLIC_URL
           }assets/images/images.jpeg)`,
         }}
-        className="absolute inset-0 bg-cover bg-center filter blur-sm brightness-75"
+        className="absolute inset-0 bg-cover bg-center filter blur-sm brightness-50"
       ></div>
       <div className="relative text-center bg-stone-200 px-3 py-5 md:px-5 md:py-8 rounded-2xl">
         <h1 className="text-2xl font-bold">
