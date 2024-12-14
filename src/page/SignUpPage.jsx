@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import SignUp from "../components/signUp";
 import { useNavigate } from "react-router-dom";
 
@@ -11,6 +12,7 @@ const SignUpPage = () => {
       email: formData.email,
       password: formData.password,
     };
+    const first_name = formData.full_name.split(" ")[0];
     const clientUrl =
       "https://my-app-backend-dusky.vercel.app/fb/insert-client";
     fetch(clientUrl, {
@@ -36,6 +38,7 @@ const SignUpPage = () => {
       .then((data) => {
         setIsSending(false);
         navigate(`/home/${data.address_id}`);
+        toast(`Welcome ${first_name}`);
         console.log("Both client and address posts succedded");
       })
       .catch((error) => {

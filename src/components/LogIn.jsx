@@ -3,17 +3,16 @@ import PropTypes from "prop-types";
 import { useRef, useState } from "react";
 
 const LogIn = ({
+  onSubmit,
   isSending,
   badresponseText,
-  fullNameRef,
-  handleSetParams,
+  
 }) => {
   const [formData, setFormData] = useState({
+    email: "",
     password: "",
-    full_name: "",
   });
   const [showPassword, setShowPassword] = useState(false);
-  const [isFullName, setIsFullName] = useState(true);
   const timeoutRef = useRef(null);
   const buttonStyle = `bg-pink-500 p-1 w-56 md:w-80 rounded-xl text-white hover:bg-pink-400 active:bg-pink-600`;
 
@@ -37,50 +36,32 @@ const LogIn = ({
 
   const submit = (e) => {
     e.preventDefault();
-
-    const fullNameArray = formData.full_name.trim().split(" ");
-    if (fullNameArray.length !== 2) {
-      fullNameRef.current ? fullNameRef.current.click() : "";
-      setIsFullName(false);
-      return;
-    }
-    handleSetParams({
-      fullName: formData.full_name,
-      password: formData.password,
-    });
+    onSubmit(formData);
   };
 
   return (
     <>
-        <h1 className="text-center text-4xl font-bold mt-5 text-pink-600">
-          Log In
-        </h1>
+      <h1 className="text-center text-4xl font-bold mt-5 text-pink-600">
+        Log In
+      </h1>
       <div className="flex items-center justify-center">
         <form
           onSubmit={submit}
           className="mt-5 signup-form bg-stone-50 p-10 rounded-md drop-shadow-2xl max-w-sm md:max-w-lg"
         >
           <div>
-            <label htmlFor="full_name" ref={fullNameRef}>
-              Full Name:
-            </label>
+            <label htmlFor="Email">Email:</label>
             <input
-              type="text"
-              id="full_name"
-              name="full_name"
-              value={formData.full_name}
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
               onChange={handleChange}
               placeholder="Sample: John Doe"
               required
-              className="signup-input md:ml-14"
+              className="signup-input md:ml-[83px]"
             />
           </div>
-
-          {!isFullName && (
-            <p className="ml-2 md:ml-32 text-xs text-red-600">
-              Please add your full name
-            </p>
-          )}
           <div className="relative">
             <label htmlFor="password">Password: </label>
             <input
@@ -118,10 +99,9 @@ const LogIn = ({
 };
 
 LogIn.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
   isSending: PropTypes.bool.isRequired,
   badresponseText: PropTypes.string.isRequired,
-  fullNameRef: PropTypes.object.isRequired,
-  handleSetParams: PropTypes.func.isRequired,
 };
 
 export default LogIn;
